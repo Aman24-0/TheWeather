@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap');
+/* font-family: "Sue Ellen Francisco", cursive;
+font-weight: 400;
+font-style: normal;      */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    background-image: url(/Images/background.jpg);
+    
+}
+
+.container {
+    height: 99vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.borderO{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #C1C1C1;
+    border-radius: 45px;
+    padding: 9px;
+    height: 92vh;
+    width: 22.7%;
+    overflow: hidden;
+    background-color: #080806;
+}
+.borderI{
+    /* border: 2px solid rgb(28, 185, 233); */
+    border-radius: 30px;
+    height: 100%;
+    width: 100%;
+    background-color: #FFE142;
+}
+.Clouds{
+  background-image: url(/Images/cloud.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.Rain{
+  background-image: url(/Images/rainy.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.Haze{
+  background-image: url(/Images/haze.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.Sunny{
+  background-image: url(/Images/sunny.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.statusBar{
+    /* border: 2px solid rgb(207, 21, 198); */
+    width: 90%;
+    padding-top: 3px;
+    margin: auto;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.time{
+    display: inline;
+    font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.upperSec{
+    /* border: 2px solid rgb(219, 61, 101); */
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* margin: auto;
+    width: 60%; */
+}
+
+.location{
+    display: inline;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 700;
+    color: #FFE142;
+    background-color: #080806;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 1rem;
+    padding: 3px;
+}
+/* From Uiverse.io by cssbuttons-io */ 
+.search{
+    --color: #080806;
+    font-family: inherit;
+    display: inline-block;
+    width: 8em;
+    height: 2.6em;
+    line-height: 2.5em;
+    margin: 20px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color 0.5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--color);
+  }
+  
+  button:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+  }
+  
+  button:hover {
+    color: #fff;
+  }
+  
+  button:before {
+    top: 100%;
+    left: 100%;
+    transition: all 0.7s;
+  }
+  
+  button:hover:before {
+    top: -30px;
+    left: -30px;
+  }
+  
+  button:active:before {
+    background: #080806;
+    transition: background 0s;
+  }
+  
+
+.date{
+    color: #FFE142;
+    background-color: #080806;
+    border-radius: 40px;
+    padding: 5px;
+    width: 68%;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+
+.weatherType{
+  font-size: 1.8rem;
+}
+
+.temp{
+    font-size: 4rem;
+}
+
+.lowerSec{
+    /* border: 2px solid rgb(219, 61, 101); */
+    color: #FFE142;
+    background-color: #080806;
+    border-radius: 10px;
+    margin: auto;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+
+}
+/* ************************************************************************************** */
+@media screen and (max-width: 430px) {
+
+  .container {
+    height: 70%;
+  }
+
+.borderO{
+    border: 4px solid #C1C1C1;
+    border-radius: 45px;
+    padding: 9px;
+    height: 92vh;
+    width: 99%;
+}
+.date{
+  width: 70%;
+}
+.weatherType{
+  font-size: 1.8rem;
+}
+
+.temp{
+    font-size: 4rem;
+}
+}
