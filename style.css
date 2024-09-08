@@ -44,6 +44,10 @@ body{
     width: 100%;
     background-color: #FFE142;
 }
+
+.backColor{
+  color: #FFE142;
+}
 .Clouds{
   background-image: url(/Images/cloud.jpg);
   background-size: cover;

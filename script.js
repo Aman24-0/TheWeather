@@ -57,6 +57,7 @@ function displayWeather(data) {
     if(weatherType == "Clouds" ){
         console.log("clouds");
         backdrop.classList.add('Clouds');
+        backdrop.classList.add('backColor');
         backdrop.classList.remove('Rain');
         backdrop.classList.remove('Haze');
         backdrop.classList.remove('Sunny');
@@ -64,6 +65,7 @@ function displayWeather(data) {
     else if(weatherType == "Rain" ){
         console.log("R");
         backdrop.classList.add('Rain');
+        backdrop.classList.add('backColor');
         backdrop.classList.remove('Clouds');
         backdrop.classList.remove('Haze');
         backdrop.classList.remove('Sunny');
@@ -71,6 +73,7 @@ function displayWeather(data) {
     else if(weatherType == "Haze" ){
         console.log("H");
         backdrop.classList.add('Haze');
+        backdrop.classList.add('backColor');
         backdrop.classList.remove('Rain');
         backdrop.classList.remove('Clouds');
         backdrop.classList.remove('Sunny');
@@ -78,6 +81,7 @@ function displayWeather(data) {
     else{
         console.log("S");
         backdrop.classList.add('Sunny');
+        backdrop.classList.add('backColor');
         backdrop.classList.remove('Rain');
         backdrop.classList.remove('Clouds');
         backdrop.classList.remove('Haze');
