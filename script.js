@@ -3,15 +3,15 @@ const apiKey = 'f85e3607f1f85bf1071f01ca6427452e';
 const apiURLBase = 'https://api.openweathermap.org/data/2.5/weather';
 
 // Select DOM elements
-const t = document.querySelector('.time');
 const d = document.querySelector('.date');
-const loc = document.querySelector('.location');
+const t = document.querySelector('.time');
+const loc = document.querySelector('.cityN');
 const searchBut = document.querySelector('.search');
 const tempBox = document.querySelector('.temp');
+const weatherTyp = document.querySelector('.weatherType');
 const windBox = document.querySelector('.wind');
 const humidityBox = document.querySelector('.humidity');
 const visibilityBox = document.querySelector('.visibility');
-const weatherTyp = document.querySelector('.weatherType');
 const backdrop = document.querySelector('#back');
 
 // Function to update date and time

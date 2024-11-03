@@ -4,11 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather</title>
-    <link rel="icon" type="image/x-icon" href="Icon/iconWeather.png"/>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="Icon/iconWeather.png" />
+    <link rel="stylesheet" href="/output.css" />
   </head>
-  <body>
-    <div class="container">
+  <body
+    class="bg-gradient-to-r from-[#E0F7FA] to-[#ECEFF1] text-[#2F4F4F] font-main"
+  >
+    <div>
+      <div class="w-auto my-10 text-center">
+        <h1 class="text-5xl">Weather</h1>
+        <h1 class="date text-xl my-3 font-sec">date</h1>
+        <h1 class="time text-xl my-3 font-sec">time</h1>
+      </div>
+
+      <div class="">
+        <div class="flex flex-col gap-10 mt-24 text-center">
+          <input
+            type="text"
+            class="cityN mx-auto w-60 h-8 rounded-xl text-center bg-[#D1F2EB] text-lg"
+            placeholder="Enter city"
+          />
+          <button
+            class="search rounded-lg w-28 text-lg mx-auto bg-[#48C9B0] hover:bg-[#349E84] font-sec"
+          >
+            Search
+          </button>
+        </div>
+
+        <div class="upperSec flex flex-col text-center text-2xl gap-3 my-5">
+          <div class="temp">0°C</div>
+          <div class="weatherType">Sunny</div>
+        </div>
+        <div class="lowerSec flex justify-center gap-10">
+          <div class="flex flex-col items-center">
+            <img src="Icon/wind.svg" class="w-16 h-16" />
+            <p class="wind text-2xl">0km/h</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <img src="Icon/humidity.svg" class="w-16 h-16" />
+            <p class="humidity text-2xl">0%</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <img src="Icon/visibility.svg" class="w-16 h-16" />
+            <p class="visibility text-2xl">0km</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
+
+<!-- <div class="container">
       <div class="borderO">
         <div class="borderI border-rad" id="back">
           <div class="statusBar">
@@ -16,7 +64,6 @@
           </div>
           <div class="upperSec">
             <div><input type="text" class="location" placeholder="Enter city"></div>
-            <button class="search">Search</button>
             <div class="date"></div>
             <div class="weatherType">Sunny</div>
             <div class="temp">0°C</div>
@@ -37,8 +84,4 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <script src="/script.js"></script>
-  </body>
-</html>
+    </div> -->
