@@ -88,6 +88,16 @@ function displayWeather(data) {
     }
 }
 
+loc.addEventListener('keydown', (event) => {
+    // Check if the pressed key is "Enter"
+    if (event.key === 'Enter') {
+        // Prevent the default form submission behavior (if any)
+        event.preventDefault();
+        // Trigger a click event on the search button
+        searchBut.click();
+    }
+});
+
 // Event listener for search button
 searchBut.addEventListener('click', () => {
     const city = loc.value;
