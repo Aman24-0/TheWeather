@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,19 +33,76 @@
 
         <div class="upperSec flex flex-col text-center text-2xl gap-3 my-5">
           <div class="temp">0°C</div>
-          <div class="weatherType">Sunny</div>
+          <div class="weatherType"></div>
         </div>
+
         <div class="lowerSec flex justify-center gap-10">
+          <!-- wind  -->
           <div class="flex flex-col items-center">
-            <img src="Icon/wind.svg" class="w-16 h-16" />
+            <svg
+              class="svg w-16 h-16 stroke-[#48C9B0]"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-wind"
+            >
+              <path
+                d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"
+              ></path>
+            </svg>
             <p class="wind text-2xl">0km/h</p>
           </div>
           <div class="flex flex-col items-center">
-            <img src="Icon/humidity.svg" class="w-16 h-16" />
+            <!-- humidity -->
+            <svg
+              class="w-16 h-16 fill-[#48C9B0]"
+              version="1.1"
+              id="레이어_1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="44"
+              height="44"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              viewBox="0 0 100 100"
+              style="enable-background: new 0 0 100 100"
+              xml:space="preserve"
+            >
+              <g id="레이어_7">
+                <path
+                  d="M50,82c-12.4,0-22.5-10.1-22.5-22.6c0-9,11.4-28.4,18.2-39c1.5-2.4,4.7-3.1,7.1-1.6c0.6,0.4,1.2,1,1.6,1.6
+		c6.8,10.7,18.2,30,18.2,39C72.4,71.9,62.4,82,50,82z M50,22.1c-0.3,0-0.7,0.2-0.8,0.5c-11,17.3-17.5,31.1-17.5,36.8
+		c0,10.1,8.2,18.4,18.3,18.4s18.4-8.2,18.4-18.4l0,0c0-5.8-6.5-19.5-17.5-36.8C50.7,22.3,50.2,22.1,50,22.1z"
+                />
+              </g>
+            </svg>
+
             <p class="humidity text-2xl">0%</p>
           </div>
           <div class="flex flex-col items-center">
-            <img src="Icon/visibility.svg" class="w-16 h-16" />
+            <!-- visibility -->
+            <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+            <svg
+              class="w-16 h-16 fill-[#48C9B0]"
+              version="1.1"
+              viewBox="0 0 16 16"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <g>
+                <path
+                  d="M8.00879,0c-3.57568,0 -6.77979,2.34619 -7.97314,5.83838c-0.0356445,0.10498 -0.0356445,0.218262 -7.63278e-17,0.323242c1.19336,3.49219 4.39746,5.83838 7.97314,5.83838c3.57568,0 6.77979,-2.34619 7.97314,-5.83838c0.0356445,-0.10498 0.0356445,-0.218262 0,-0.323242c-1.19336,-3.49219 -4.39746,-5.83838 -7.97314,-5.83838Zm0,11c-3.09277,0 -5.87256,-2.00244 -6.96973,-5c1.09717,-2.99756 3.87695,-5 6.96973,-5c3.09277,0 5.87256,2.00244 6.96973,5c-1.09717,2.99756 -3.87695,5 -6.96973,5Z"
+                  transform="translate(-0.008789, 2)"
+                ></path>
+                <path
+                  d="M3,0c-1.6543,0 -3,1.3457 -3,3c0,1.6543 1.3457,3 3,3c1.6543,0 3,-1.3457 3,-3c0,-1.6543 -1.3457,-3 -3,-3Zm0,5c-1.10303,0 -2,-0.896973 -2,-2c0,-1.10303 0.896973,-2 2,-2c1.10303,0 2,0.896973 2,2c0,1.10303 -0.896973,2 -2,2Z"
+                  transform="translate(5, 5)"
+                ></path>
+              </g>
+            </svg>
             <p class="visibility text-2xl">0km</p>
           </div>
         </div>
