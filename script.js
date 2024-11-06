@@ -7,14 +7,20 @@ const d = document.querySelector('.date');
 const t = document.querySelector('.time');
 const loc = document.querySelector('.cityN');
 const searchBut = document.querySelector('.search');
+const wethBox = document.querySelector('.weatherbox');
+const searchBox = document.querySelector('.searchbox');
+const currCity = document.querySelector('.currCity');
 const tempBox = document.querySelector('.temp');
 const weatherTyp = document.querySelector('.weatherType');
+const locIcon = document.querySelector('.locIcon');
 const windBox = document.querySelector('.wind');
 const humidityBox = document.querySelector('.humidity');
 const visibilityBox = document.querySelector('.visibility');
+const reload = document.querySelector('.reload');
 const backdrop = document.body;
 // const svgEle = document.getElementsByTagName('svg');
-const svgElement = document.querySelectorAll('svg');
+const svgElement = document.querySelectorAll('.svg');
+const svgWind = document.querySelector('.svg1');
 
 // Function to update date and time
 function updateDateTime() {
@@ -59,20 +65,16 @@ function displayWeather(data) {
         console.log("Clear&Sunny");
         backdrop.classList.remove('bg-gradient-to-r', 'from-[#E0F7FA]', 'to-[#ECEFF1]');
         backdrop.classList.add('bg-gradient-to-r', 'from-[#FDEB71]', 'to-[#87CEEB]');
+
     }
     else if (weatherType == "Haze") {
         console.log("Haze");
         // remove main css
-        backdrop.classList.remove('bg-gradient-to-r', 'from-[#E0F7FA]', 'to-[#ECEFF1]');
-        backdrop.classList.remove('text-[#2F4F4F]');
-        loc.classList.remove('bg-[#D1F2EB]');
-        searchBut.classList.remove('bg-[#48C9B0]');
+        backdrop.classList.remove('bg-gradient-to-r', 'from-[#E0F7FA]', 'to-[#ECEFF1]', 'text-[#2F4F4F]');
         // add new css
-        backdrop.classList.add('bg-gradient-to-b', 'from-[#D3D3D3]', 'via-[#C0C0C0]', 'to-[#E6D8B8]');
-        backdrop.classList.add('text-[#4A4A4A]');
-        loc.classList.add('bg-[#F5F5F5]', 'text-[#4A4A4A]');
-        searchBut.classList.add('bg-gradient-to-b', 'from-[#B0B0B0]', 'to-[#A0A0A0]');
+        backdrop.classList.add('bg-gradient-to-b', 'from-[#D3D3D3]', 'via-[#C0C0C0]', 'to-[#E6D8B8]', 'text-[#4A4A4A]');
 
+        svgWind.setAttribute('stroke', '#F5F5F5');
         svgElement.forEach(element => {
             element.classList.remove('stroke-[#48C9B0]', 'fill-[#48C9B0]');
             element.setAttribute('fill', '#F5F5F5');
@@ -82,15 +84,11 @@ function displayWeather(data) {
     else if (weatherType == "smoke") {
         console.log("Smoke");
         // remove main css
-        backdrop.classList.remove('bg-gradient-to-r', 'from-[#E0F7FA]', 'to-[#ECEFF1]');
-        backdrop.classList.remove('text-[#2F4F4F]');
-        loc.classList.remove('bg-[#D1F2EB]');
-        searchBut.classList.remove('bg-[#48C9B0]');
+        backdrop.classList.remove('bg-gradient-to-r', 'from-[#E0F7FA]', 'to-[#ECEFF1]', 'text-[#2F4F4F]');
         // add new css
-        backdrop.classList.add('bg-gradient-to-b', 'from-[#A8A8A8]', 'via-[#888888]', 'to-[#D1D1D1]');
-        backdrop.classList.add('text-[#333333]');
-        loc.classList.add('bg-[#EAEAEA]', 'text-[#333333]');
-        searchBut.classList.add('bg-gradient-to-b', 'from-[#C0C0C0]', 'to-[#9E9E9E]', 'text-[#FFFFFF]');
+        backdrop.classList.add('bg-gradient-to-b', 'from-[#A8A8A8]', 'via-[#888888]', 'to-[#D1D1D1]', 'text-[#333333]');
+
+        svgWind.setAttribute('stroke', '#888888');
         svgElement.forEach(element => {
             element.classList.remove('stroke-[#48C9B0]', 'fill-[#48C9B0]');
             element.setAttribute('fill', '#888888');
@@ -100,15 +98,11 @@ function displayWeather(data) {
     else if (weatherType == "Clouds") {
         console.log("Clouds");
         // remove main css
-        backdrop.classList.remove('bg-gradient-to-r', 'from-[#E0F7FA]', 'to-[#ECEFF1]');
-        backdrop.classList.remove('text-[#2F4F4F]');
-        loc.classList.remove('bg-[#D1F2EB]');
-        searchBut.classList.remove('bg-[#48C9B0]');
+        backdrop.classList.remove('bg-gradient-to-r', 'from-[#E0F7FA]', 'to-[#ECEFF1]', 'text-[#2F4F4F]');
         // add new css
-        backdrop.classList.add('bg-gradient-to-b', 'from-[#BFD3E6]', 'via-[#E0E8EC]', 'to-[#F5F5F5]');
-        backdrop.classList.add('text-[#5A5A5A]');
-        loc.classList.add('bg-[#F0F8FF]', 'text-[#5A5A5A]');
-        searchBut.classList.add('bg-gradient-to-b', 'from-[#D1D9E0]', 'to-[#AFC7D5]', 'text-[#FFFFFF]');
+        backdrop.classList.add('bg-gradient-to-b', 'from-[#BFD3E6]', 'via-[#E0E8EC]', 'to-[#F5F5F5]', 'text-[#5A5A5A]');
+
+        svgWind.setAttribute('stroke', '#AFC7D5');
         svgElement.forEach(element => {
             element.classList.remove('stroke-[#48C9B0]', 'fill-[#48C9B0]');
             element.setAttribute('fill', '#AFC7D5');
@@ -118,22 +112,59 @@ function displayWeather(data) {
     else if (weatherType == "Mist") {
         console.log("Mist");
         // remove main css
-        backdrop.classList.remove('bg-gradient-to-r', 'from-[#E0F7FA]', 'to-[#ECEFF1]');
-        backdrop.classList.remove('text-[#2F4F4F]');
-        loc.classList.remove('bg-[#D1F2EB]');
-        searchBut.classList.remove('bg-[#48C9B0]');
+        backdrop.classList.remove('bg-gradient-to-r', 'from-[#E0F7FA]', 'to-[#ECEFF1]', 'text-[#2F4F4F]');
         // add new css
-        backdrop.classList.add('bg-gradient-to-b', 'from-[#DDE2E4]', 'via-[#F0F2F3]', 'to-[#FAFAFA]');
-        backdrop.classList.add('text-[#4D4D4D]');
-        loc.classList.add('bg-[#F8FAFB]', 'text-[#4D4D4D]');
-        searchBut.classList.add('bg-gradient-to-b', 'from-[#D1D5D6]', 'to-[#BFC3C5]', 'text-[#FFFFFF]');
+        backdrop.classList.add('bg-gradient-to-b', 'from-[#DDE2E4]', 'via-[#F0F2F3]', 'to-[#FAFAFA]', 'text-[#4D4D4D]');
+
+        svgWind.setAttribute('stroke', '#C5C9CB');
         svgElement.forEach(element => {
             element.classList.remove('stroke-[#48C9B0]', 'fill-[#48C9B0]');
             element.setAttribute('fill', '#C5C9CB');
             // element.setAttribute('stroke', '#333333');
         });
     }
+    else if (weatherType == "Rain") {
+        console.log("Rain");
+        // remove main css
+        backdrop.classList.remove('bg-gradient-to-r', 'from-[#E0F7FA]', 'to-[#ECEFF1]', 'text-[#2F4F4F]');
+        // add new css
+        backdrop.classList.add('bg-gradient-to-b', 'from-[#4a536b]', 'to-[#6d819c]', 'text-[#f0f4f8]');
 
+        svgWind.setAttribute('stroke', '#9db4c8');
+        svgElement.forEach(element => {
+            element.classList.remove('stroke-[#48C9B0]', 'fill-[#48C9B0]');
+            element.setAttribute('fill', '#9db4c8');
+            // element.setAttribute('stroke', '#f0f4f8');
+        });
+    }
+    else if (weatherType == "Thunderstorm") {
+        console.log("Thunderstorm");
+        // remove main css
+        backdrop.classList.remove('bg-gradient-to-r', 'from-[#E0F7FA]', 'to-[#ECEFF1]', 'text-[#2F4F4F]');
+        // add new css
+        backdrop.classList.add('bg-gradient-to-b', 'from-[#2e2e3e]', 'to-[#4b4b6a]', 'text-[#f8f9fb]');
+
+        svgWind.setAttribute('stroke', '#8e93a6');
+        svgElement.forEach(element => {
+            element.classList.remove('stroke-[#48C9B0]', 'fill-[#48C9B0]');
+            element.setAttribute('fill', '#8e93a6');
+            // element.setAttribute('stroke', '#ffeb3b');
+        });
+    }
+    else if (weatherType == "Fog") {
+        console.log("Fog");
+        // remove main css
+        backdrop.classList.remove('bg-gradient-to-r', 'from-[#E0F7FA]', 'to-[#ECEFF1]', 'text-[#2F4F4F]');
+        // add new css
+        backdrop.classList.add('bg-gradient-to-b', 'from-[#4b5563]', 'to-[#1f2937]', 'text-[#f3f4f6]');
+
+        svgWind.setAttribute('stroke', '#ffcc00');
+        svgElement.forEach(element => {
+            element.classList.remove('stroke-[#48C9B0]', 'fill-[#48C9B0]');
+            element.setAttribute('fill', '#ffcc00');
+            // element.setAttribute('stroke', '#ffeb3b');
+        });
+    }
 }
 
 loc.addEventListener('keydown', (event) => {
@@ -152,7 +183,16 @@ searchBut.addEventListener('click', () => {
     if (city) {
         fetchWeather(city); // Fetch weather for the entered city
     }
+    wethBox.classList.toggle('hidden');
+    searchBox.classList.toggle('hidden');
+    currCity.innerHTML = city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
 });
+
+// To reload page
+reload.addEventListener('click', () => {
+    location.reload();
+
+})
 
 // Initial call to update time and set interval
 updateDateTime();
